@@ -101,8 +101,8 @@ body {
   flex-wrap: wrap;
 }
 .box{
-  height: 33%;
-  width:  31%;
+  height: 30vw;
+  width:  30vw;
   font-size: 75px;
   display: flex;
   justify-content: center;
