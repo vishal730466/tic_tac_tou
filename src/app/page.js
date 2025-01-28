@@ -8,21 +8,26 @@ export default function Home() {
    
   const myset = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6] ]
   const [turn , setTurn] = useState("Player1");
+
+  const [myarray, setMyarray] = useState(Array(9).fill(''));
+
   const [winner, setWinner] = useState(false)
   
   
   
   const fillbox = (a)=>{
 
-    if(document.getElementById(a).innerHTML != "O" && document.getElementById(a).innerHTML!="X"){
+    if(document.getElementById(a).innerHTML != "O" && document.getElementById(a).innerHTML!="X" && !winner){
 
       if(turn == "Player1"){
         document.getElementById(a).innerHTML="O";
+     //  setMyarray([a]="O")
         check_winner();
         setTurn("Player2")
       }
       else{
         document.getElementById(a).innerHTML="X";
+     //  setMyarray([a]="X")
         var a=check_winner();
         console.log(a)
       setTurn("Player1")
@@ -57,15 +62,15 @@ export default function Home() {
    <h1>Tic tac toe</h1>
   <div id="con">
    {winner && <div id="winner"> winner is {turn} </div>}
-  <div className="box" id="box0" onClick={()=>fillbox("box0")}> </div>
-  <div className="box" id="box1" onClick={()=>fillbox("box1")}> </div>
-  <div className="box" id="box2" onClick={()=>fillbox("box2")}> </div>
-  <div className="box" id="box3" onClick={()=>fillbox("box3")}> </div>
-  <div className="box" id="box4" onClick={()=>fillbox("box4")}> </div>
-  <div className="box" id="box5" onClick={()=>fillbox("box5")}> </div>
-  <div className="box" id="box6" onClick={()=>fillbox("box6")}> </div>
-  <div className="box" id="box7" onClick={()=>fillbox("box7")}> </div>
-  <div className="box" id="box8" onClick={()=>fillbox("box8")}> </div>
+  <div className="box" id="box0" onClick={()=>fillbox("box0")}> {myarray[0]} </div>
+  <div className="box" id="box1" onClick={()=>fillbox("box1")}> {myarray[1]}</div>
+  <div className="box" id="box2" onClick={()=>fillbox("box2")}> {myarray[2]}</div>
+  <div className="box" id="box3" onClick={()=>fillbox("box3")}> {myarray[3]}</div>
+  <div className="box" id="box4" onClick={()=>fillbox("box4")}> {myarray[4]}</div>
+  <div className="box" id="box5" onClick={()=>fillbox("box5")}> {myarray[5]}</div>
+  <div className="box" id="box6" onClick={()=>fillbox("box6")}> {myarray[6]}</div>
+  <div className="box" id="box7" onClick={()=>fillbox("box7")}> {myarray[7]}</div>
+  <div className="box" id="box8" onClick={()=>fillbox("box8")}> {myarray[8]}</div>
   </div>
 
   
