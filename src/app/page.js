@@ -12,8 +12,17 @@ export default function Home() {
   const [myarray, setMyarray] = useState(Array(9).fill(''));
 
   const [winner, setWinner] = useState(false)
+  const [is_mob , setis_mob] = useState("com")
+  const width = window.innerWidth;
   
-  
+  const check_width=()=>{
+    if (window.innerWidth < 550) {
+      setis_mob("mob")
+    }
+  }
+  useEffect(()=>{
+      check_width()
+  },[width])
   
   const fillbox = (a)=>{
 
@@ -58,9 +67,9 @@ export default function Home() {
   }
 
   return (<>
-  
+
    <h1>Tic tac toe</h1>
-  <div id="con">
+  <div className={is_mob}> 
    {winner && <div id="winner"> winner is {turn} </div>}
   <div className="box" id="box0" onClick={()=>fillbox("box0")}> {myarray[0]} </div>
   <div className="box" id="box1" onClick={()=>fillbox("box1")}> {myarray[1]}</div>
