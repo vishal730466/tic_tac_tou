@@ -75,7 +75,7 @@ export default function Home() {
    <h1>Tic tac toe</h1>
   <div className={is_mob}> 
    {winner && <div id="winner"> winner is {turn} 
-   Refresh to play again</div>}
+   </div>}
   <div className="box" id="box0" onClick={()=>fillbox("box0")}> {myarray[0]} </div>
   <div className="box" id="box1" onClick={()=>fillbox("box1")}> {myarray[1]}</div>
   <div className="box" id="box2" onClick={()=>fillbox("box2")}> {myarray[2]}</div>
