@@ -13,10 +13,14 @@ export default function Home() {
 
   const [winner, setWinner] = useState(false)
   const [is_mob , setis_mob] = useState("com")
-  const width = window.innerWidth;
+  let width;
+
+  if (typeof window !== "undefined") {
+    width = window.innerWidth;
+  }
   
   const check_width=()=>{
-    if (window.innerWidth < 550) {
+    if (width < 550) {
       setis_mob("mob")
     }
   }
