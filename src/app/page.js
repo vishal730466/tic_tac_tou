@@ -86,8 +86,6 @@ export default function Home() {
   <div className="box" id="box7" onClick={()=>fillbox("box7")}> {myarray[7]}</div>
   <div className="box" id="box8" onClick={()=>fillbox("box8")}> {myarray[8]}</div>
   </div>
-
-  
   </>
   
   );
